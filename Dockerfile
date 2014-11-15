@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV TERM linux
 
 RUN apt-get update -y && \
-    apt-get install -y locales php5-cli php5-json curl php5-pgsql php5-mysqlnd php5-intl php5-curl --no-install-recommends
+    apt-get install -y locales git php5-cli php5-json curl php5-pgsql php5-mysqlnd php5-intl php5-curl
 
 RUN echo "Europe/Paris" > /etc/timezone && \
     dpkg-reconfigure -f noninteractive tzdata && \
