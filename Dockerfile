@@ -14,6 +14,8 @@ RUN echo "Europe/Paris" > /etc/timezone && \
     locale-gen && \
     update-locale LANG=fr_FR.UTF-8
 
+RUN echo 'date.timezone = Europe/Paris' >> /etc/php5/cli/php.ini
+
 RUN useradd --create-home user
 
 RUN curl -sS --insecure https://getcomposer.org/installer | php
