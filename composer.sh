@@ -4,4 +4,4 @@ MY_PATH=$(dirname $(realpath $0))
 
 . $MY_PATH/docker-name.conf
 
-docker run -ti -v $PWD:/var/www $DOCKER_IMAGE_NAME /usr/local/bin/composer $@
+docker run -ti -v $PWD:/var/www $DOCKER_IMAGE_NAME $@

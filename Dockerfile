@@ -20,7 +20,7 @@ RUN chown user:user /usr/local/bin/composer
 
 USER user
 
-VOLUME ['/var/www']
+VOLUME ["/var/www"]
 WORKDIR /var/www
 
-CMD ['/usr/local/bin/composer']
+ENTRYPOINT ["/usr/local/bin/composer"]
