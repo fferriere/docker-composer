@@ -2,6 +2,9 @@
 
 MY_PATH=$(dirname $(realpath $0))
 
-. $MY_PATH/docker-name.conf
+if [ "$1" = "selfupdate" ] || [ "$1" = "self-update" ]; then
+    $MY_PATH/build.sh --no-cache=true
+    exit 0
+fi
 
-docker run -ti -v $PWD:/var/www $DOCKER_IMAGE_NAME $@
+/bin/bash $MY_PATH/composer-service/run.sh $@
