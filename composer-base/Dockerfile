@@ -7,4 +7,4 @@ RUN apt-get update -y && \
 
 RUN echo 'date.timezone = Europe/Paris' >> /etc/php5/cli/php.ini
 
-ENTRYPOINT ["false"]
+CMD ["false"]
