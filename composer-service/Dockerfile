@@ -2,9 +2,9 @@ FROM fferriere/composer-base
 
 MAINTAINER ferriere.florian@gmail.com
 
-RUN curl -sS https://getcomposer.org/installer | php
-RUN mv composer.phar /usr/local/bin/composer
-RUN chown user:user /usr/local/bin/composer
+RUN curl -sS --cacert /usr/lib/ssl/cert.pem https://getcomposer.org/installer | php && \
+    mv composer.phar /usr/local/bin/composer && \
+    chown user:user /usr/local/bin/composer
 
 USER user
 

@@ -7,4 +7,7 @@ RUN apt-get update -y && \
 
 RUN echo 'date.timezone = Europe/Paris' >> /etc/php5/cli/php.ini
 
+RUN mkdir -p /usr/lib/ssl && \
+    wget -O /usr/lib/ssl/cert.pem http://curl.haxx.se/ca/cacert.pem
+
 CMD ["false"]
